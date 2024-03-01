@@ -22,7 +22,9 @@ class UserRouter {
 
         });
 
-        this.router.post('/logout', async (req, res) => {
+        this.router.post('/:id/revoke', async (req, res) => {
+            
+            await UserController.revoke(req, res);
             
         });
     }

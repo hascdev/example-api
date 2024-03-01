@@ -37,7 +37,7 @@ class AuthController {
 
             // Check user and password
             if (!user || !(password === user.password)) { // await bcrypt.compare(password, user.password);
-                return res.status(401).json({ error: 'Authentication failed' });
+                return res.status(401).json({ message: 'Authentication failed' });
             }            
     
             // Create and sign the token
@@ -47,7 +47,7 @@ class AuthController {
             res.json({ token });
     
         } catch (error) {
-            return res.status(500).json({ error: error.message });
+            return res.status(500).json({ message: error.message });
         }
     }
 }

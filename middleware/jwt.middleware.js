@@ -9,7 +9,7 @@ class JwtMiddleware {
 
             const token = req.header('auth_token');
 
-            if (!token) return res.status(401).json({ error: 'Token not found in request' });
+            if (!token) return res.status(401).json({ message: 'Token not found in request' });
             
             try {
 
@@ -28,7 +28,7 @@ class JwtMiddleware {
                 next();
 
             } catch (error) {
-                res.status(401).json({ error: 'Invalid token' });
+                res.status(401).json({ message: 'Invalid token' });
             }
 
         };
