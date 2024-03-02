@@ -1,12 +1,13 @@
 import { Router } from 'express';
 import JwtMiddleware from '../middleware/jwt.middleware.js';
 import UserController from "../controllers/user.controller.js";
+import Roles from '../constant/roles.js';
 
 class UserRouter {
 
     constructor() {
         this.router = Router();
-        this.router.use(JwtMiddleware.get());
+        this.router.use(JwtMiddleware.get(Roles.All));
         this.setup();
     }
 

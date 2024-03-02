@@ -8,16 +8,17 @@ const seedUsers = async () => {
                 id uuid DEFAULT gen_random_uuid() PRIMARY KEY, 
                 username VARCHAR(255) NOT NULL, 
                 password TEXT NOT NULL, 
+                role TEXT NOT NULL, 
                 hash TEXT NOT NULL 
             );
         `);
         
         console.log(`Created "users" table`);
 
-        await pool.query(`INSERT INTO users ( id, username, password, hash ) 
+        await pool.query(`INSERT INTO users ( id, username, password, role, hash ) 
             VALUES 
-                ('ca61da8c-938a-48a6-8eb6-55aa08cd1b08', 'admin', 'passwd', 'scwigklqz6kly2mkmf4jgvv539y260'), 
-                ('fe2af584-8576-4d0e-b10d-6ec970732f8e', 'demo', 'passwd', 'qu25u5qfvi5kcdu0t4eu7pi33ebhi8') 
+                ('ca61da8c-938a-48a6-8eb6-55aa08cd1b08', 'admin', 'passwd', 'admin', 'scwigklqz6kly2mkmf4jgvv539y260'), 
+                ('fe2af584-8576-4d0e-b10d-6ec970732f8e', 'demo', 'passwd', 'user', 'qu25u5qfvi5kcdu0t4eu7pi33ebhi8') 
             ON CONFLICT (id) DO NOTHING;
         `);
 
