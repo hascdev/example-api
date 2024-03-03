@@ -1,4 +1,4 @@
-# Simple API
+# Simple API (Node.js + Express + Postgres + JWT)
 
 API creada con Node.js + Express + Postgres usando autenticación con JWT (Json Web Tokens) basado en roles de usuario.
 
