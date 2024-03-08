@@ -35,7 +35,7 @@ class App {
     setupRouters() {
         
         this.app.get('/', (_, res) => {
-            res.json({ message: 'Welcome to our service!' });
+            res.json({ message: 'Welcome to Simple API!' });
         });
 
         // Documentation in JSON format
