@@ -14,9 +14,11 @@ class App {
 
     start(port) {
 
-        return this.app.listen(port, () => {        
+        this.app.listen(port, () => {        
             console.log(`Server running on ${port}`);
         });
+
+        return this.app;
     }
 
     setupGlobalMiddleware() {
