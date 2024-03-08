@@ -29,7 +29,7 @@ class App {
         this.app.disable('x-powered-by');
 
         // Swagger Page
-        this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, { customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css" }))
+        this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, { customCssUrl: "https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css" }))
     }
 
     setupRouters() {
